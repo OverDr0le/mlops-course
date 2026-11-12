@@ -8,6 +8,9 @@ services:
     #       command (tritonserver --model-repository=/models, загрузить
     #       только модель варианта ${CV_MODEL}, метрики на :8002 вкл. GPU-метрики),
     #       проброс GPU (deploy.resources.reservations.devices, driver nvidia).
+    image:
+      nvcr.nju.edu.cn/nvidia/tritonserver@sha256:153d3158d96346bc50df7fa6e1c3a96d6dc638249072be20ebbbcae07b8505ca
+    platform: linux/amd64
     volumes:
       - ./model_repository:/models
     ports:
